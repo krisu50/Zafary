@@ -1,21 +1,30 @@
-const input1 = window.document.querySelector('#email') //llamar al id se usa #
-const input2 = window.document.querySelector('#password')
+const input1 = document.querySelector('#email');
+const input2 = document.querySelector('#password');
+const btnLogin = document.querySelector('#btn-login');
+const msgError = document.querySelector('#msg-error');
 
-const boton = window.document.querySelector('#boton')
+const credenciales = {
+    usuario: 'ejemplo@gmail.com',
+    password: '123456'
+}
 
-boton.addEventListener('click', mostrarDato)
+btnLogin.addEventListener('click', login)
 
-function mostrarDato() {
-    const input1 = window.document.querySelector('#email');
-    const input2 = window.document.querySelector('#password');
+function login() {
+    if(!input1.value || !input2.value) return;
+
+    /*const input1 = document.querySelector('#email');
+    const input2 = document.querySelector('#password');
     const textoInput = input1.value;
-    input1.value = '';
+    input1.value = ' ';
     const passInput = input2.value;
-    input2.value = '';
+    input2.value = ' ';*/
 
-    if (textoInput === 'chris.sautejeau@gmail.com' && passInput === '12345'){
-        console.log('PUEDES INGRESAR AL SISTEMA :D')
-    }else{
-        console.log('NO PUEDES INGRESAR AL SISTEMA :c')
+    if (input1.value === credenciales.usuario && input2.value === credenciales.password){
+        msgError.classList.add('hide');
+        document.location.assign('../Layout/index.html')
+        }
+    else{
+        msgError.classList.remove('hide');
     }
 }

@@ -88,8 +88,17 @@
     background: #469F85;
   }
   
-  .formulario-login small {
+  .msg-error{
+    color: red;
+    text-align: center;
+  }
+
+  .msg-love {
     color: #AFAFAF;;
+  }
+  
+  .hide{
+    display: none;
   }
   
   /* Color de texto de ayuda */
